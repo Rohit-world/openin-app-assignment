@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./authpage.css";
 import {AiFillApple} from "react-icons/ai"
 import {FcGoogle} from "react-icons/fc"
+import {auth,provider} from "../firebase"
+import { signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+
 
 const AuthPage = () => {
+  const navigate=useNavigate()
+const [user,setuser]=useState(null)
+
+const handleClick=()=>{
+  signInWithPopup(auth, provider).then((res)=>{
+    setuser(res.user)
+    navigate("/dashboard")
+
+    localStorage.setItem("openinUser",JSON.stringify(user))
+  }).catch((err)=>{
+    console.log("error", err);
+  })
+
+
+
+
+}
+
+
+useEffect(()=>{
+const isloggedin=JSON.parse(localStorage.getItem(
+  'openinUser'
+))
+
+
+// isloggedin && alert("already logged in")
+},[])
+
   return (
     <div className="main-container">
       <div className="left-container">
@@ -17,7 +49,7 @@ const AuthPage = () => {
         </div>
 
         <div className="buttons-box">
-       <button>
+       <button onClick={handleClick}>
         <FcGoogle/>
 sign in with Google
        </button>
@@ -39,7 +71,7 @@ sign in with Google
 
       <label style={{color:"blue"}} for="password">Forgot Password?</label>
 
-      <button type="submit">Sign In</button>
+      <button onClick={()=>alert("Sign in with Google")} type="submit">Sign In</button>
     </form>
   </div>
 

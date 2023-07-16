@@ -3,6 +3,7 @@
   display: flex;
   padding: 1% 2%;
   background: #e8e8e8;
+  overflow: hidden;
 }
 
 .main-dashboard-container > .menu-bar {
@@ -56,7 +57,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 .main-dashboard-container > .dashboard > .first-column div {
   display: flex;
@@ -64,21 +64,17 @@
   gap: 30px;
 }
 
-
 .main-dashboard-container > .dashboard > .first-column p {
-    font-weight:600;
+  font-weight: 600;
 }
-.main-dashboard-container>.dashboard .input-div{
-    position: relative;
+.main-dashboard-container > .dashboard .input-div {
+  position: relative;
 }
-.main-dashboard-container>.dashboard .input-icon{
-    position: absolute;
-    right: 10px;
-    color: grey;
+.main-dashboard-container > .dashboard .input-icon {
+  position: absolute;
+  right: 10px;
+  color: grey;
 }
-
-
-
 
 .main-dashboard-container > .dashboard > .first-column input {
   border: none;
@@ -87,28 +83,161 @@
   padding: 5px 10px;
 }
 
-
-
 .main-dashboard-container > .dashboard > .first-column img {
   width: 30px;
 }
 
-
-.main-dashboard-container .second-column{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
+.main-dashboard-container .second-column {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 
-
-.main-dashboard-container .second-column div{
-   background-color: rgb(223, 210, 186);
-    padding: 5px 25px;
-    line-height: 10px;
-    border-radius: 15px;
-    width: 150px;
+.main-dashboard-container .second-column div {
+  background-color: rgb(223, 210, 186);
+  padding: 5px 25px;
+  line-height: 10px;
+  border-radius: 15px;
+  width: 150px;
 }
-.main-dashboard-container .second-column .icon{
-   
+.main-dashboard-container .second-column .icon {
   margin-left: 80%;
+}
+
+.main-dashboard-container .third-column .line-chart .chart {
+}
+.main-dashboard-container .third-column .line-chart {
+  display: flex;
+  width: 50%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.main-dashboard-container .third-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 1% 1%;
+}
+
+.main-dashboard-container .fourth-column {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+.main-dashboard-container .fourth-column > div {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  width: 100%;
+
+  padding: 0% 1%;
+  border-radius: 10px;
+}
+
+.main-dashboard-container .fourth-column > div > .first-line {
+  display: flex;
+  justify-content: space-between;
+}
+.main-dashboard-container .fourth-column > div > .first-line p {
+  font-size: small;
+  color: gray;
+}
+
+.main-dashboard-container .fourth-column > div > .second-line {
+  display: flex;
+  justify-content: space-around;
+  margin-top: -40px;
+}
+
+.main-dashboard-container .fourth-column .sec-box {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-dashboard-container .fourth-column .sec-box > .second-line-box {
+
+  padding-left: 5%;
+  border-left: 5px solid rgb(158, 216, 158);
+  height: 60px;
+}
+
+.main-dashboard-container .fourth-column .sec-box p {
+  font-size: smaller;
+  color: gray;
+}
+
+.main-dashboard-container .fourth-column .sec-box .head {
+  font-weight: 700;
+  color: black;
+}
+
+
+
+@media only screen and (max-width: 1003px) and (min-width: 0px){
+  .main-dashboard-container {
+    display: grid;
+  }
+  .main-dashboard-container .menu-bar{
+    flex-direction: row;
+    gap: 5%;
+    height: 50px;
+   max-width: 100vw;
+    overflow: hidden;
+
+  }
+
+  
+  .main-dashboard-container .menu-bar .menu-options {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap:2px ;
+  }
+  .main-dashboard-container .menu-bar .menu-contacts{
+ display: none;
+}
+
+.main-dashboard-container > .dashboard {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.main-dashboard-container > .dashboard > .first-column {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.main-dashboard-container .second-column {
+  display: grid;
+ grid-template-columns: repeat(2,1fr);
+ gap: 4%;
+  margin-top: 20px;
+}
+
+.main-dashboard-container .third-column .line-chart {
+  display: grid;
+}
+
+.main-dashboard-container .fourth-column {
+  display: grid;
+}
+.main-dashboard-container > .dashboard {
+ justify-content: center;
+ align-items: center;
+}.main-dashboard-container .second-column div {
+  
+  width: 90px;
+  font-size: small;
+}
+.main-dashboard-container > .menu-bar button {
+ font-size: small;
+}
 }

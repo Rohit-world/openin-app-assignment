@@ -69,6 +69,7 @@ color:  #000000;
     display: flex;
     justify-content: space-between;
     width: 65%;
+    
 }
 .right-container>.buttons-box>button{
     background-color: white;
@@ -80,6 +81,12 @@ color:  #000000;
     justify-content: center;
     gap: 10px;
     color: gray;
+    cursor: pointer;
+   
+
+}
+.right-container>.buttons-box>button:hover{
+   scale: 105%;
    
 
 }
